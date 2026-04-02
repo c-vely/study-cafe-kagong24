@@ -37,12 +37,12 @@ export default function Home() {
 
         {/* Header - Music Player Style */}
         <div className="flex justify-center mb-8">
-          <RetroWindow title="STUDY.exe" className="w-full max-w-md">
+          <RetroWindow title="카공24.exe" className="w-full max-w-md">
             <div className="flex flex-col items-center gap-3 py-4">
               <div className="w-full h-20 bg-gradient-to-b from-[#8b6090] via-[#b088a0] to-[#d0a8b0] rounded-sm border-2 border-[#c08080] flex items-end justify-center pb-2 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <p className="text-[8px] text-[#f0d0d0] tracking-widest">
-                    ★ OPEN STUDY CAFE ★
+                    ★ 카공24 ★
                   </p>
                 </div>
                 {/* Cityscape silhouette */}
@@ -52,7 +52,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <p className="text-[10px] tracking-wider">오픈형 스터디카페</p>
+              <p className="text-[10px] tracking-wider">카공24</p>
               {/* Progress bar */}
               <div className="w-full flex items-center gap-2">
                 <span className="text-[8px]">3:00</span>
@@ -92,7 +92,7 @@ export default function Home() {
               <div className="flex-1 bg-gradient-to-br from-[#508878] to-[#407068] border-2 border-[#c08080] p-6 flex flex-col items-center justify-center min-h-[240px] relative">
                 <div className="text-center">
                   <p className="text-[#f0d8c8] text-[20px] leading-relaxed mb-4">
-                    STUDY
+                    카공24
                   </p>
                   <p className="text-[#f0d8c8] text-[8px] leading-loose">
                     집중이 필요한 순간,
@@ -132,10 +132,10 @@ export default function Home() {
           <RetroWindow title="facilities.gif" className="float-anim">
             <div className="space-y-4 py-2">
               <h3 className="text-[11px] text-center mb-4 text-coral">✦ 시설 안내 ✦</h3>
-              <FacilityItem icon="wifi" label="초고속 Wi-Fi" desc="끊김 없는 인터넷" />
-              <FacilityItem icon="coffee" label="무료 음료" desc="커피 / 차 무제한" />
-              <FacilityItem icon="music" label="백색소음" desc="집중을 위한 환경" />
+              <FacilityItem icon="wifi" label="Wi-Fi" desc="끊김 없는 인터넷" />
+              <FacilityItem icon="coffee" label="무제한 커피" desc="원두커피 무제한 제공" />
               <FacilityItem icon="clock" label="24시 운영" desc="언제든 이용 가능" />
+              <FacilityItem icon="book" label="편안한 학습 분위기" desc="집중할 수 있는 환경" />
             </div>
           </RetroWindow>
 
@@ -145,10 +145,7 @@ export default function Home() {
               <h3 className="text-[11px] text-center mb-4 text-coral">✦ 이용 요금 ✦</h3>
               {/* Progress-bar style pricing */}
               <div className="space-y-3">
-                <PriceItem label="1시간" price="2,000원" fill="w-1/6" />
-                <PriceItem label="3시간" price="5,000원" fill="w-1/4" />
-                <PriceItem label="종일권" price="12,000원" fill="w-1/2" />
-                <PriceItem label="정기권 (30일)" price="150,000원" fill="w-full" />
+                <PriceItem label="24시간" price="5,900원" fill="w-full" />
               </div>
               <div className="mt-4 text-center">
                 <button className="pixel-btn">예약하기</button>
@@ -169,7 +166,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-[8px] text-[#a08080] mt-2">
-                ※ 매월 첫째 월요일 정기 점검
+                연중무휴
               </p>
             </div>
           </RetroWindow>
@@ -207,8 +204,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="mt-3 text-center space-y-1">
-                <p className="text-[9px]">서울시 강남구 테헤란로 123</p>
-                <p className="text-[8px] text-[#a08080]">지하철 2호선 강남역 3번 출구 도보 5분</p>
+                <p className="text-[9px]">서울 성북구 고려대로27길 15 지하 1층</p>
               </div>
             </div>
           </RetroWindow>
@@ -219,9 +215,7 @@ export default function Home() {
           <RetroWindow title="contact.txt" className="w-full max-w-md">
             <div className="py-3 text-center space-y-2">
               <h3 className="text-[11px] text-coral mb-3">✦ 문의하기 ✦</h3>
-              <p className="text-[9px]">TEL: 02-1234-5678</p>
-              <p className="text-[9px]">KAKAO: @studycafe</p>
-              <p className="text-[9px]">INSTA: @study.exe</p>
+              <p className="text-[9px]">INSTA: @kagong24</p>
               <div className="flex justify-center gap-2 mt-3">
                 <PixelIcon type="heart" size={16} className="text-coral" />
                 <PixelIcon type="heart" size={16} className="text-pink" />
@@ -239,7 +233,7 @@ export default function Home() {
               ▶ START
             </button>
             <div className="flex items-center gap-4">
-              <span className="text-[8px] text-text-dark hidden sm:inline">📖 study.exe</span>
+              <span className="text-[8px] text-text-dark hidden sm:inline">📖 kagong24.exe</span>
               <span className="text-[8px] text-text-dark hidden sm:inline">☕ coffee.dll</span>
               <div className="border-2 border-[#c08080] bg-[#f0d0c8] px-3 py-1">
                 <span className="text-[8px]">OPEN 24H</span>
@@ -264,7 +258,7 @@ function DesktopIcon({ icon, label }: { icon: "computer" | "book" | "music" | "c
   );
 }
 
-function FacilityItem({ icon, label, desc }: { icon: "wifi" | "coffee" | "music" | "clock"; label: string; desc: string }) {
+function FacilityItem({ icon, label, desc }: { icon: "wifi" | "coffee" | "music" | "clock" | "book"; label: string; desc: string }) {
   return (
     <div className="flex items-center gap-3">
       <div className="w-8 h-8 flex items-center justify-center border-2 border-[#c08080] bg-[#f0d0c8] text-[#704848] shrink-0">
