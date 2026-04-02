@@ -1,26 +1,166 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --mint: #b8d8c8;
+  --mint-light: #c8e8d8;
+  --pink: #e8a0a0;
+  --pink-light: #f0c0b8;
+  --pink-dark: #d08888;
+  --coral: #e07868;
+  --cream: #f8e8d8;
+  --title-bar: #d8a0a0;
+  --window-bg: #f0c8c0;
+  --window-border: #c08080;
+  --text-dark: #704848;
+  --grid-line: rgba(160, 200, 180, 0.5);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-mint: var(--mint);
+  --color-mint-light: var(--mint-light);
+  --color-pink: var(--pink);
+  --color-pink-light: var(--pink-light);
+  --color-pink-dark: var(--pink-dark);
+  --color-coral: var(--coral);
+  --color-cream: var(--cream);
+  --color-title-bar: var(--title-bar);
+  --color-window-bg: var(--window-bg);
+  --color-window-border: var(--window-border);
+  --color-text-dark: var(--text-dark);
+  --font-pixel: 'Press Start 2P', 'DotGothic16', monospace;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--mint);
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  font-family: 'Press Start 2P', 'DotGothic16', monospace;
+  color: var(--text-dark);
+  image-rendering: pixelated;
+}
+
+/* Pixel-style scrollbar */
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background: var(--mint-light);
+  border-left: 2px solid var(--window-border);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--pink);
+  border: 2px solid var(--window-border);
+}
+
+/* Retro window styles */
+.retro-window {
+  background: var(--window-bg);
+  border: 3px solid var(--window-border);
+  border-top-color: var(--pink-light);
+  border-left-color: var(--pink-light);
+  box-shadow:
+    4px 4px 0px rgba(0, 0, 0, 0.15),
+    inset 1px 1px 0px rgba(255, 255, 255, 0.3);
+}
+
+.retro-title-bar {
+  background: linear-gradient(90deg, var(--title-bar), var(--pink-light));
+  border-bottom: 2px solid var(--window-border);
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: default;
+  user-select: none;
+}
+
+.retro-title-bar .title {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--text-dark);
+}
+
+.window-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.window-btn {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--window-border);
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.window-btn:hover {
+  background: var(--pink);
+}
+
+.window-content {
+  padding: 12px;
+}
+
+/* Pixel sparkle animation */
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.6); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.float-anim {
+  animation: float 3s ease-in-out infinite;
+}
+
+.blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+/* Pixel art button */
+.pixel-btn {
+  background: var(--pink);
+  border: 3px solid var(--window-border);
+  border-top-color: var(--pink-light);
+  border-left-color: var(--pink-light);
+  padding: 10px 20px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15);
+}
+
+.pixel-btn:hover {
+  background: var(--coral);
+  color: white;
+}
+
+.pixel-btn:active {
+  border-top-color: var(--window-border);
+  border-left-color: var(--window-border);
+  border-bottom-color: var(--pink-light);
+  border-right-color: var(--pink-light);
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.15);
+  transform: translate(2px, 2px);
 }
